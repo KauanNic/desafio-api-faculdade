@@ -38,4 +38,4 @@ async function buscarPersonagens() {
     }
 }
 
-buscarPersonagens();
+buscarPersonagens();    
