@@ -1,16 +1,38 @@
-Desafio 1 - Consumo de API (Harry Potter)
-Este é o meu primeiro projeto de consumo de API para a faculdade. O objetivo foi criar um site simples que puxa dados da internet e exibe na tela de um jeito organizado, focando principalmente no uso em celulares.
+O que mudou no projeto?
+1. PWA (Progressive Web App)
 
-O que eu usei no projeto:
-HTML e CSS: Fiz a estrutura básica e usei Flexbox para o site não quebrar no mobile. Adicionei um efeito de "hover" nos cards para eles subirem quando o mouse passa em cima.
+O site agora pode ser instalado no celular como se fosse um aplicativo nativo.
 
-JavaScript: Usei o fetch com async/await para buscar os personagens da API oficial do Harry Potter. No código, eu tratei as imagens para que, caso algum personagem não tenha foto, o site não fique com um "buraco".
+Adicionei o manifest.json para configurar ícones e cores.
 
-GitHub Pages: Usei para hospedar o site e deixar ele online.
+Implementei um Service Worker para garantir que o app abra mesmo se o usuário estiver sem internet (modo offline).
 
-Como testar:
-Abra o link do deploy: [(https://kauannic.github.io/desafio-api-faculdade/)]
+2. Recursos de Hardware
 
-Os cards vão carregar automaticamente.
+Integrei o site diretamente com as funções do aparelho:
 
-Se clicar em um card, ele abre uma busca no Google sobre o personagem.
+Vibração: Ao clicar em qualquer card de bruxo, o celular emite um feedback tátil (vibração curta).
+
+Compartilhamento: Adicionei um botão "Compartilhar" que aciona o menu nativo do sistema (Android/iOS) para enviar o link do personagem.
+
+3. Melhorias de UI e Lighthouse
+
+Foquei em deixar o site mais profissional e rápido:
+
+Barra de busca: Agora é possível filtrar os 50 personagens em tempo real.
+
+Métricas do Lighthouse: Otimizei as tags de SEO, contraste de cores e acessibilidade para alcançar notas altas no teste de qualidade do Google.
+
+Design: Ajustei o visual dos cards e do cabeçalho para priorizar a experiência mobile.
+
+🛠️ Tecnologias Utilizadas
+HTML5, CSS3 e JavaScript (Vanilla)
+
+API de Vibração e Web Share API
+
+Service Workers e Cache Storage
+
+🔗 Links do Projeto
+Repositório: https://github.com/KauanNic/desafio-api-faculdade
+
+Site (Deploy): https://kauannic.github.io/desafio-api-faculdade/
