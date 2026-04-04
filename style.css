@@ -2,57 +2,64 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 body {
     background-color: #1a1a1a;
     color: white;
-    padding: 20px;
+    padding: 15px;
 }
 
 header {
     text-align: center;
-    margin-bottom: 30px;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    background: #1a1a1a;
+    z-index: 10;
 }
 
-header h1 {
-    color: #ffc107;
+h1 { color: #ffc107; margin-bottom: 15px; }
+
+#busca {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
 }
 
 #lista-api {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 500px;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .bruxo-card {
     background-color: #2c2c2c;
     border-radius: 12px;
-    overflow: hidden;
     display: flex;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease, border 0.3s ease;
+    overflow: hidden;
     cursor: pointer;
-    border: 1px solid transparent;
+    transition: transform 0.2s;
+    border: 1px solid #333;
 }
 
-.bruxo-card:hover {
-    transform: translateY(-10px);
-    border: 1px solid #ffc107;
-}
+.bruxo-card:active { transform: scale(0.95); }
 
-.bruxo-card img {
-    width: 100px;
-    height: 120px;
-    object-fit: cover;
-}
+.bruxo-card img { width: 90px; height: 110px; object-fit: cover; }
+/* ... Mantenha o restante do seu CSS igual ... */
 
 .info {
     padding: 15px;
+    flex: 1; /* Faz a info ocupar todo o espaço restante */
+    display: flex;
+    flex-direction: column; /* Organiza o texto e o botão em coluna */
 }
 
 .info h3 {
@@ -62,19 +69,35 @@ header h1 {
 }
 
 .info p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #ccc;
+    margin-bottom: 10px; 
+    flex: 1; 
 }
 
+
+.btn-share {
+    align-self: flex-end; /* Alinha o botão à direita */
+    background-color: #555; /* Fundo cinza */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn-share:hover {
+    background-color: #777; /* Cinza um pouco mais claro no hover */
+}
+
+.info { padding: 15px; }
+.info h3 { color: #ffc107; font-size: 1.1rem; }
+.info p { font-size: 0.85rem; color: #aaa; }
+
 @media (min-width: 768px) {
-    #lista-api {
-        flex-direction: row;
-        flex-wrap: wrap;
-        max-width: 1000px;
-        justify-content: center;
-    }
-    
-    .bruxo-card {
-        width: 300px;
-    }
+    #lista-api { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
 }

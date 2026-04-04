@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <header>
-    <h1>Hogwarts Explorer</h1>
-</header>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harry Potter Wiki</title>
+    <meta name="description" content="Wiki de personagens de Harry Potter - Desafio PWA">
+    <meta name="theme-color" content="#1a1a1a">
+    <title>Hogwarts PWA</title>
+    
+    <link rel="icon" href="https://img.icons8.com/color/48/harry-potter.png">
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Personagens Harry Potter</h1>
+        <h1>Hogwarts Explorer</h1>
+        <input type="text" id="busca" placeholder="Buscar bruxo...">
     </header>
 
     <main id="app">
-        <div id="loading">Carregando...</div>
+        <div id="loading">Carregando magia...</div>
         <div id="lista-api"></div>
     </main>
 
     <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
 </body>
 </html>
